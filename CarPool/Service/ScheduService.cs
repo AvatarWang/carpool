@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Service
 {
@@ -96,7 +97,7 @@ namespace Service
                 lon = parameter.startLon
             };
             var endScheduList = hackMySqlHelper.DapperQuery<Schedu>(endSql, endParam);
-            var scheduList = startScheduList.Intersect(endScheduList).Where(x=>Convert.ToDateTime(x.SStartTime)<Convert.ToDateTime(parameter.startTime).AddMinutes(15) && Convert.ToDateTime(x.SStartTime) > Convert.ToDateTime(parameter.startTime).AddMinutes(-15)&&x.SType==Convert.ToInt32(parameter.type)).ToList();
+            var scheduList = startScheduList.Intersect(endScheduList).Where(x => Convert.ToDateTime(x.SStartTime) < Convert.ToDateTime(parameter.startTime).AddMinutes(15) && Convert.ToDateTime(x.SStartTime) > Convert.ToDateTime(parameter.startTime).AddMinutes(-15) && x.SType == Convert.ToInt32(parameter.type)).ToList();
             return scheduList;
 
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
+
 namespace DataAccess
 {
     public class HackMySqlHelper
@@ -65,7 +66,7 @@ namespace DataAccess
                     List<T> list = DataReaderToList<T>(reader);
                     return list;
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     throw;
                 }
@@ -252,3 +253,4 @@ namespace DataAccess
         }
     }
 }
+
