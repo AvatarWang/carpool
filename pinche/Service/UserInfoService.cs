@@ -48,7 +48,7 @@ VALUES
 
         public UserInfo GetUserInfo(UserInfoParam param)
         {
-            UserInfo userinfo = null;
+            UserInfo userinfo = new UserInfo();
             string sqlstring = "select * from userinfo where UIUId=@UIUId " +
                 " limit 1";
             var sqlParams = new

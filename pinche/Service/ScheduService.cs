@@ -14,10 +14,11 @@ namespace Service
         public bool AddSchedu(ScheduParam parameter)
         {
             string sql = @"INSERT INTO `calpool`.`schedu`(`SUIId`,`SStartAddress`,`SEndAddress`,`SStartLat`,`SEndLon`,`SEndLat`,
-            `SStartLon`,`SRemark`,`SStartTime`,`SCreateTime`,`SStatus`,`SCount`,`SPrice`,`SType`)VALUES(@@,@SStartAddress,@SEndAddress,@SStartLat,
+            `SStartLon`,`SRemark`,`SStartTime`,`SStatus`,`SCount`,`SPrice`,`SType`)VALUES(@SUIId,@SStartAddress,@SEndAddress,@SStartLat,
             @SEndLon,@SEndLat,@SStartLon,@SRemark,@SStartTime,@SStatus,@SCount,@SPrice,@SType)";
             var param = new
             {
+                SUIId = parameter.userId,
                 SType = parameter.type,
                 SStartAddress = parameter.startAddress,
                 SEndAddress = parameter.endAddress,
