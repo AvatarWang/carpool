@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Model
 {
-    public class DriverInfo
+    public class DriverInfoParam
     {
-        public long DIId { get; set; }
         public string DITelPhone { get; set; }
         public string DICarType { get; set; }
         public string DICarNumber { get; set; }
