@@ -65,7 +65,7 @@ namespace DataAccess
                     List<T> list = DataReaderToList<T>(reader);
                     return list;
                 }
-                catch (Exception ex) 
+                catch (Exception ex)
                 {
                     throw;
                 }
@@ -118,7 +118,7 @@ namespace DataAccess
         /// <param name="param"></param>
         /// <param name="isStoredProcedure"></param>
         /// <returns></returns>
-        public bool TSqlExcute(string sql, MySqlParameter[] param, bool? isStoredProcedure = false)
+        public static bool TSqlExcute(string sql, MySqlParameter[] param, bool? isStoredProcedure = false)
         {
             bool result = false;
             using (MySqlConnection con = new MySqlConnection(connectionStr))
@@ -134,7 +134,7 @@ namespace DataAccess
                     tran.Commit();
                     result = true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     tran.Rollback();
                     throw;
