@@ -10,6 +10,6 @@
         public string UIHomeLon { get; set; }
         public string UIWorkLat { get; set; }
         public string UIWorkLon { get; set; }
-        public int UIRole { get; set; }
+        public System.UInt64 UIRole { get; set; }
     }
 }

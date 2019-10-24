@@ -11,10 +11,23 @@ namespace CarPool.Controllers
         [HttpPost]
         public HackResponse Post([FromBody] UserInfoParam param)
         {
-            bool isSuc = UserInfoService.AddUserInfo(param);
-            return
-                new HackResponse
-                (HackResType.Success, HackRspCode.HackRspCode_0000, "查询成功", new { isSucess = isSuc });
+            UserInfo userinfo = UserInfoService.GetUserInfo(param);
+            if (userinfo == null)
+            {
+
+                bool isSuc = UserInfoService.AddUserInfo(param);
+                return
+                    new HackResponse
+                    (HackResType.Success, HackRspCode.HackRspCode_0000, "查询成功",
+                    new { isSucess = isSuc });
+            }
+            else
+            {
+                return
+                   new HackResponse
+                   (HackResType.DataError, HackRspCode.HackRspCode_3000,
+                   "重复添加", new { });
+            }
         }
     }
 }

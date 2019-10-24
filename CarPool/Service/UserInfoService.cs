@@ -1,6 +1,7 @@
 ﻿using DataAccess;
 using Model;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 
 namespace Service
 {
@@ -49,6 +50,25 @@ VALUES
             sqlParams[7].Value = param.UIRole;
             bool isSuc = HackMySqlHelper.TSqlExcute(sqlstring, sqlParams, false);
             return isSuc;
+        }
+
+
+        public static UserInfo GetUserInfo(UserInfoParam param)
+        {
+            UserInfo userinfo = null;
+            string sqlstring = "select * from userinfo where UIUId=@UIUId " +
+                " limit 1";
+            MySqlParameter[] sqlParams = new MySqlParameter[]
+                {
+                       new MySqlParameter("@UIUId", MySqlDbType.Int64)
+                };
+            sqlParams[0].Value = param.UId;
+            List<UserInfo> userinfos = HackMySqlHelper.TSqlQuery<UserInfo>(sqlstring, sqlParams, false);
+            if (userinfos != null && userinfos.Count > 0)
+            {
+                userinfo = userinfos[0];
+            }
+            return userinfo;
         }
     }
 }
