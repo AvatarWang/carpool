@@ -161,3 +161,6 @@ D:\hack\carpool\pinche\pinche\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
 D:\hack\carpool\pinche\pinche\obj\Debug\pinche.csproj.CopyComplete
 D:\hack\carpool\pinche\pinche\obj\Debug\pinche.dll
 D:\hack\carpool\pinche\pinche\obj\Debug\pinche.pdb
+D:\hack\carpool\pinche\pinche\bin\System.Web.Cors.dll
+D:\hack\carpool\pinche\pinche\bin\System.Web.Http.Cors.dll
+D:\hack\carpool\pinche\pinche\bin\System.Web.Http.Cors.xml
