@@ -1,0 +1,5 @@
+E:\pinche\pinche\Model\bin\Debug\Model.dll
+E:\pinche\pinche\Model\bin\Debug\Model.pdb
+E:\pinche\pinche\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\pinche\pinche\Model\obj\Debug\Model.dll
+E:\pinche\pinche\Model\obj\Debug\Model.pdb
