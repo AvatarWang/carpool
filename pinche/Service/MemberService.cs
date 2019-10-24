@@ -14,8 +14,8 @@ namespace Service
                 "AND UPassWord=@UPassWord limit 1";
             var sqlParams = new
             {
-                workNum = param.workNum,
-                passWord = param.passWord
+                UWorkNumber = param.workNum,
+                UPassWord = param.passWord
             };
             List<User> users = hackMySqlHelper.DapperQuery<User>(sqlstring, sqlParams, false);
             if (users != null && users.Count > 0)

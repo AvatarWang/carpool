@@ -31,7 +31,7 @@ VALUES
     @UIRole)";
             var sqlParams = new
             {
-                UId = param.UId,
+                UIUId = param.UId,
                 UIHomeAddress = param.UIHomeAddress,
                 UIWorkAddress = param.UIWorkAddress,
                 UIHomeLat = param.UIHomeLat,
@@ -53,7 +53,7 @@ VALUES
                 " limit 1";
             var sqlParams = new
             {
-                UId = param.UId
+                UIUId = param.UId
             };
             List<UserInfo> userinfos = hackMySqlHelper.DapperQuery<UserInfo>(sqlstring, sqlParams, false);
             if (userinfos != null && userinfos.Count > 0)

@@ -7,6 +7,7 @@ namespace CarPool.Controllers
     public class DriverInfoController : ApiController
     {
         DriverInfoService service = new DriverInfoService();
+        [HttpPost]
         public HackResponse Post([FromBody] DriverInfoParam param)
         {
             DriverInfo driverInfo = service.GetDriverInfo(param);

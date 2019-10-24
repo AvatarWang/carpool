@@ -2,3 +2,5 @@ D:\hack\carpool\pinche\Model\bin\Debug\Model.dll
 D:\hack\carpool\pinche\Model\bin\Debug\Model.pdb
 D:\hack\carpool\pinche\Model\obj\Debug\Model.dll
 D:\hack\carpool\pinche\Model\obj\Debug\Model.pdb
+D:\hack\carpool\pinche\Model\bin\Debug\System.Runtime.Serialization.Primitives.dll
+D:\hack\carpool\pinche\Model\obj\Debug\Model.csproj.CopyComplete
