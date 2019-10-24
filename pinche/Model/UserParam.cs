@@ -7,5 +7,7 @@ namespace Model
     public class UserParam : BaseParam
     {
         public String workNum { get; set; }
+
+        public String passWord { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-E:\pinche\pinche\Model\bin\Debug\Model.dll
-E:\pinche\pinche\Model\bin\Debug\Model.pdb
-E:\pinche\pinche\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
-E:\pinche\pinche\Model\obj\Debug\Model.dll
-E:\pinche\pinche\Model\obj\Debug\Model.pdb
+D:\hack\carpool\pinche\Model\bin\Debug\Model.dll
+D:\hack\carpool\pinche\Model\bin\Debug\Model.pdb
+D:\hack\carpool\pinche\Model\obj\Debug\Model.dll
+D:\hack\carpool\pinche\Model\obj\Debug\Model.pdb

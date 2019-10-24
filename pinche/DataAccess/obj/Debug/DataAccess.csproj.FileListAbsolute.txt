@@ -13,3 +13,17 @@ E:\pinche\pinche\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
 E:\pinche\pinche\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 E:\pinche\pinche\DataAccess\obj\Debug\DataAccess.dll
 E:\pinche\pinche\DataAccess\obj\Debug\DataAccess.pdb
+D:\hack\carpool\pinche\DataAccess\bin\Debug\DataAccess.dll
+D:\hack\carpool\pinche\DataAccess\bin\Debug\DataAccess.pdb
+D:\hack\carpool\pinche\DataAccess\bin\Debug\BouncyCastle.Crypto.dll
+D:\hack\carpool\pinche\DataAccess\bin\Debug\Dapper.dll
+D:\hack\carpool\pinche\DataAccess\bin\Debug\Google.Protobuf.dll
+D:\hack\carpool\pinche\DataAccess\bin\Debug\MySql.Data.dll
+D:\hack\carpool\pinche\DataAccess\bin\Debug\Renci.SshNet.dll
+D:\hack\carpool\pinche\DataAccess\bin\Debug\Dapper.xml
+D:\hack\carpool\pinche\DataAccess\bin\Debug\Google.Protobuf.xml
+D:\hack\carpool\pinche\DataAccess\bin\Debug\MySql.Data.xml
+D:\hack\carpool\pinche\DataAccess\bin\Debug\Renci.SshNet.xml
+D:\hack\carpool\pinche\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+D:\hack\carpool\pinche\DataAccess\obj\Debug\DataAccess.dll
+D:\hack\carpool\pinche\DataAccess\obj\Debug\DataAccess.pdb

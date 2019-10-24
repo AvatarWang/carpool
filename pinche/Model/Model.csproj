@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C06556D0-856E-4621-B81A-6E166C37EB33}</ProjectGuid>
+    <ProjectGuid>{3DC86635-0494-42E6-BAAC-8B313CE490C5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Model</RootNamespace>
@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BaseParam.cs" />
     <Compile Include="DriverInfo.cs" />
+    <Compile Include="DriverInfoParam.cs" />
     <Compile Include="HackResponse.cs" />
     <Compile Include="HackResType.cs" />
     <Compile Include="HackRspCode.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="ScheduParam.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserInfo.cs" />
+    <Compile Include="UserInfoParam.cs" />
     <Compile Include="UserParam.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

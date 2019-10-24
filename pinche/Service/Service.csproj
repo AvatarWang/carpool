@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DriverInfoService.cs" />
+    <Compile Include="MemberService.cs" />
     <Compile Include="ScheduService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
@@ -50,7 +53,7 @@
       <Name>DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{C06556D0-856E-4621-B81A-6E166C37EB33}</Project>
+      <Project>{3DC86635-0494-42E6-BAAC-8B313CE490C5}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
