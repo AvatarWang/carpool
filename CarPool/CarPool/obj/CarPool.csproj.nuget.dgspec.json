@@ -32,6 +32,9 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
+              "D:\\hack\\carpool\\CarPool\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\hack\\carpool\\CarPool\\DataAccess\\DataAccess.csproj"
+              },
               "D:\\hack\\carpool\\CarPool\\Model\\Model.csproj": {
                 "projectPath": "D:\\hack\\carpool\\CarPool\\Model\\Model.csproj"
               }
@@ -62,6 +65,74 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\hack\\carpool\\CarPool\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\hack\\carpool\\CarPool\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "D:\\hack\\carpool\\CarPool\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\15213\\.nuget\\packages\\",
+        "outputPath": "D:\\hack\\carpool\\CarPool\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\15213\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://api.nuget.17usoft.com/v3/index.json": {},
+          "http://tcwnuget.17usoft.com/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.30, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.18, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
               "autoReferenced": true
             }
           },

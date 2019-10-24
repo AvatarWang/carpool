@@ -9,9 +9,10 @@ using System.Text;
 
 namespace DataAccess
 {
-    public class MySqlHelper
+    public class HackMySqlHelper
     {
-        private string connectionStr = "server=localhost;database=fxy;User=root;password=cxk";
+        private static string connectionStr = "Database=calpool;Data Source=10.102.44.4;Port=3306;UserId=root;Password=123@abcd;Charset=utf8;TreatTinyAsBoolean=false;Allow User Variables=True";
+        //private static string connectionStr = "server=10.102.44.4,3306;database=calpool;User=root;password=123@abcd";
 
         /// <summary>
         /// Dapper查询（包含存储过程及sql语句查询）
@@ -46,7 +47,7 @@ namespace DataAccess
         /// <param name="param"></param>
         /// <param name="isStoredProcedure"></param>
         /// <returns></returns>
-        public List<T> TSqlQuery<T>(string sql, MySqlParameter[] param, bool? isStoredProcedure = false) where T : new()
+        public static List<T> TSqlQuery<T>(string sql, MySqlParameter[] param, bool? isStoredProcedure = false) where T : new()
         {
             using (MySqlConnection con = new MySqlConnection(connectionStr))
             {
@@ -64,7 +65,7 @@ namespace DataAccess
                     List<T> list = DataReaderToList<T>(reader);
                     return list;
                 }
-                catch (Exception)
+                catch (Exception ex) 
                 {
                     throw;
                 }

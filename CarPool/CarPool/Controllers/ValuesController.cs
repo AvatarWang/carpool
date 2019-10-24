@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataAccess;
 using Microsoft.AspNetCore.Mvc;
 using Model;
+using MySql.Data.MySqlClient;
 
 namespace CarPool.Controllers
 {
@@ -15,7 +17,9 @@ namespace CarPool.Controllers
         [HttpGet]
         public ActionResult<HackResponse> Get()
         {
-            return new HackResponse();
+            string sqlstring = "select * from user";
+            List<User> users = HackMySqlHelper.TSqlQuery<User>(sqlstring, null, false);
+            return new HackResponse(HackResType.Success, HackRspCode.HackRspCode_0000, "查询成功", users);
         }
 
         // GET api/values/5
