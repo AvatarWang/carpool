@@ -8,7 +8,7 @@ namespace Model
     {
         public HackResponse()
         {
-            SetHackResponse(HackResType.DataError, HackRspCode.HackRspCode_3000, "未知错误", null);
+            SetHackResponse(HackResType.Success, HackRspCode.HackRspCode_0001, "查无结果", new { });
         }
         public HackResponse(HackResType rspType, HackRspCode rspCode, string rspDesc, dynamic body)
         {
