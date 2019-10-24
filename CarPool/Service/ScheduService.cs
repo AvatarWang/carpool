@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Service
@@ -31,6 +32,73 @@ namespace Service
             };
 
             return hackMySqlHelper.DapperExcute(sql, param);
+        }
+
+        public List<Schedu> GetSchedu(ScheduParam parameter)
+        {
+            var startSql = @"
+                SELECT *
+                FROM  calpool.schedu
+                WHERE     ROUND(
+                        6378.138 * 2 * ASIN(
+                            SQRT(
+                                POW(
+                                    SIN(
+                                        (
+                                           @lat * PI() / 180 - SStartLat * PI() / 180
+                                        ) / 2
+                                    ),
+                                    2
+                                ) + COS(@lat * PI() / 180) * COS(SStartLat * PI() / 180) * POW(
+                                    SIN(
+                                        (
+                                            @lon * PI() / 180 - SStartLon * PI() / 180
+                                        ) / 2
+                                    ),
+                                    2
+                                )
+                            )
+                        ) * 1000
+                    ) <=  10000";
+            var starParam = new
+            {
+                lat = parameter.startLat,
+                lon = parameter.startLon
+            };
+            var startScheduList = hackMySqlHelper.DapperQuery<Schedu>(startSql, starParam);
+            var endSql = @"
+                SELECT *
+                FROM  calpool.schedu
+                WHERE     ROUND(
+                        6378.138 * 2 * ASIN(
+                            SQRT(
+                                POW(
+                                    SIN(
+                                        (
+                                            @lat * PI() / 180 - SEndLat * PI() / 180
+                                        ) / 2
+                                    ),
+                                    2
+                                ) + COS(@lat * PI() / 180) * COS(SEndLat * PI() / 180) * POW(
+                                    SIN(
+                                        (
+                                            @lon * PI() / 180 - SEndLon * PI() / 180
+                                        ) / 2
+                                    ),
+                                    2
+                                )
+                            )
+                        ) * 1000
+                    ) <=  10000";
+            var endParam = new
+            {
+                lat = parameter.startLat,
+                lon = parameter.startLon
+            };
+            var endScheduList = hackMySqlHelper.DapperQuery<Schedu>(endSql, endParam);
+            var scheduList = startScheduList.Intersect(endScheduList).Where(x=>Convert.ToDateTime(x.SStartTime)<Convert.ToDateTime(parameter.startTime).AddMinutes(15) && Convert.ToDateTime(x.SStartTime) > Convert.ToDateTime(parameter.startTime).AddMinutes(-15)).ToList();
+            return scheduList;
+
         }
     }
 }

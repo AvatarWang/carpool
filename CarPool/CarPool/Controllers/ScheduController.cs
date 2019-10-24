@@ -16,8 +16,8 @@ namespace CarPool.Controllers
         //检查当前是否有行程
         //如果有行程 提示当前有行程 并且返回自己的匹配行程
         //如果无行程 到发布页面
-        [HttpPost]
-        public HackResponse Post([FromBody] ScheduParam param)
+        [HttpPost(Name ="addschedu")]
+        public HackResponse AddSchedu([FromBody] ScheduParam param)
         {
             bool flag = service.AddSchedu(param);
             if (flag)
@@ -29,6 +29,20 @@ namespace CarPool.Controllers
                 return new HackResponse(HackResType.Success, HackRspCode.HackRspCode_3000, "创建失败", false);
             }
 
+        }
+
+        public HackResponse GetSchedu([FromBody] ScheduParam param)
+        {
+            var scheduList = service.GetSchedu(param);
+
+            if (scheduList.Any())
+            {
+                return new HackResponse(HackResType.Success, HackRspCode.HackRspCode_0000, "查询成功", scheduList);
+            }
+            else
+            {
+                return new HackResponse(HackResType.Success, HackRspCode.HackRspCode_0001, "查询无结果", scheduList);
+            }
         }
     }
 }
