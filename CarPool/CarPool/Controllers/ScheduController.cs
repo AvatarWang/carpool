@@ -30,7 +30,7 @@ namespace CarPool.Controllers
             }
 
         }
-
+        [HttpPost(Name = "getschedu")]
         public HackResponse GetSchedu([FromBody] ScheduParam param)
         {
             var scheduList = service.GetSchedu(param);
