@@ -29,7 +29,7 @@ namespace CarPool.Controllers
                 DriverInfoParam dparam = new DriverInfoParam();
                 dparam.DIUIID = user.UId;
                 DriverInfo driverInfo = dservice.GetDriverInfo(dparam);
-                if (driverInfo == null)
+                if (driverInfo != null)
                 {
                     model.driveInfo = driverInfo;
                 }
