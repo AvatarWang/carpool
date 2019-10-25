@@ -36,7 +36,7 @@ namespace Service
             return hackMySqlHelper.DapperExcute(sql, param);
         }
 
-        public List<Schedu> GetSchedu(ScheduParam parameter)
+        public List<ScheduNew> GetSchedu(ScheduParam parameter)
         {
             var startSql = @"
                 SELECT *
@@ -94,11 +94,46 @@ namespace Service
                     ) <=  10000";
             var endParam = new
             {
-                lat = parameter.startLat,
-                lon = parameter.startLon
+                lat = parameter.endLat,
+                lon = parameter.endLon
             };
             var endScheduList = hackMySqlHelper.DapperQuery<Schedu>(endSql, endParam);
-            var scheduList = startScheduList.Intersect(endScheduList).Where(x => Convert.ToDateTime(x.SStartTime) < Convert.ToDateTime(parameter.startTime).AddMinutes(15) && Convert.ToDateTime(x.SStartTime) > Convert.ToDateTime(parameter.startTime).AddMinutes(-15) && x.SType == Convert.ToInt32(parameter.type)).ToList();
+            List<ScheduNew> target = new List<ScheduNew>();
+            MemberService mservice = new MemberService();
+            foreach (var item in endScheduList)
+            {
+                foreach (var itemin in startScheduList)
+                {
+                    if (itemin.SId == item.SId)
+                    {
+                        ScheduNew itemnew = new ScheduNew();
+                        itemnew.SId = itemin.SId;
+                        itemnew.SUIId = itemin.SUIId;
+                        itemnew.SStartAddress = itemin.SStartAddress;
+                        itemnew.SEndAddress = itemin.SEndAddress;
+                        itemnew.SStartLat = itemin.SStartLat;
+                        itemnew.SEndLon = itemin.SEndLon;
+                        itemnew.SEndLat = itemin.SEndLat;
+                        itemnew.SStartLon = itemin.SStartLon;
+                        itemnew.SRemark = itemin.SRemark;
+                        itemnew.SStartTime = itemin.SStartTime;
+                        itemnew.SCreateTime = itemin.SCreateTime;
+                        itemnew.SStatus = itemin.SStatus;
+                        itemnew.SCount = itemin.SCount;
+                        itemnew.SPrice = itemin.SPrice;
+                        itemnew.SType = itemin.SType;
+                        UserParam uParam = new UserParam();
+                        uParam.UId = itemin.SUIId;
+                        User user = mservice.GetUserById(uParam);
+                        if (user != null)
+                        {
+                            itemnew.NickName = user.UNick;
+                        }
+                        target.Add(itemnew);
+                    }
+                }
+            }
+            var scheduList = target.Where(x => x.SType == Convert.ToInt32(parameter.type)).ToList();
             return scheduList;
 
         }

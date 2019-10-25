@@ -9,5 +9,6 @@ namespace Model
         public String workNum { get; set; }
 
         public String passWord { get; set; }
+        public long UId { get; set; }
     }
 }

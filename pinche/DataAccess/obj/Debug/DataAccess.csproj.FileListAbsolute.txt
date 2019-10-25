@@ -27,3 +27,4 @@ D:\hack\carpool\pinche\DataAccess\bin\Debug\Renci.SshNet.xml
 D:\hack\carpool\pinche\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 D:\hack\carpool\pinche\DataAccess\obj\Debug\DataAccess.dll
 D:\hack\carpool\pinche\DataAccess\obj\Debug\DataAccess.pdb
+D:\hack\carpool\pinche\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache

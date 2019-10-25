@@ -24,5 +24,22 @@ namespace Service
             }
             return user;
         }
+
+        public User GetUserById(UserParam param)
+        {
+            User user = null;
+            string sqlstring = "select * from user where UId=@UId " +
+                " limit 1";
+            var sqlParams = new
+            {
+                UId = param.UId
+            };
+            List<User> users = hackMySqlHelper.DapperQuery<User>(sqlstring, sqlParams, false);
+            if (users != null && users.Count > 0)
+            {
+                user = users[0];
+            }
+            return user;
+        }
     }
 }
